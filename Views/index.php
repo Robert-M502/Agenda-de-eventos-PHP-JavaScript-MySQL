@@ -15,20 +15,22 @@
                 <form id="formulario">
                     <div class="modal-body">
                         <div class="mb-3 form-floating">
-                            <input type="text" class="form-control" id="title">
+                            <input type="text" class="form-control" id="title" name="title">
                             <label for="title" class="form-label">Evento</label>
                         </div>
                         <div class="mb-3 form-floating">
-                            <input type="date" class="form-control" id="start">
+                            <input type="date" class="form-control" id="start" name="start">
                             <label for="start" class="form-label">Fecha</label>
                         </div>
                         <div class="mb-3 form-floating">
-                            <input type="color" class="form-control" id="color">
+                            <input type="color" class="form-control" id="color" name="color">
                             <label for="color" class="form-label">Color</label>
                         </div>
                     </div>
                     <div class="modal-footer">
-
+                        <button class="btn btn-warning">Cancelar</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                        <button class="btn btn-primary" id="btnAccion" type="submit">Registrar</button>
                     </div>
                 </form>
             </div>
