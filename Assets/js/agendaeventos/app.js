@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
             center: "title",
             right: "dayGridMonth, timeGridWeek, listWeek",
         },
+
+        events: base_url + "AgendaEventos/listar",
+
         dateClick: function (info) {
             //console.log(info);
             document.getElementById("start").value = info.dateStr;
@@ -19,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     });
     calendar.render();
+
     frm.addEventListener("submit", function (e) {
         e.preventDefault();
 
@@ -35,7 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
             http.send(new FormData(frm));
             http.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    console.log(this.responseText);
+                    //console.log(this.responseText);
+                    const respuesta = JSON.parse(this.responseText);
+                    console.log(respuesta);
+                    if (respuesta.estado) {
+                        calendar.refetchEvents();
+                    }
+                    myModal.hide();
+                    Swal.fire("Aviso", respuesta.msg, respuesta.icono);
                 }
             };
         }

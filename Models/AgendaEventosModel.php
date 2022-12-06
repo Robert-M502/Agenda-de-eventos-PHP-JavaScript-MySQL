@@ -11,11 +11,17 @@ class AgendaEventosModel extends Query
         $sql = "INSERT INTO eventos (title, start, color) VALUES (?,?,?)";
         $array = array($evento, $fecha, $color);
         $data = $this->insert($sql, $array);
-        if ($data == 1) {
+        if ($data == true) {
             $msg = 1;
         } else {
             $msg = 0;
         }
         return $msg;
+    }
+
+    public function listarEventos()
+    {
+        $sql = "SELECT * FROM eventos";
+        return $this->select_all($sql);
     }
 }

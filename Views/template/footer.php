@@ -4,7 +4,7 @@
 <script src="<?php echo BASE_URL; ?>Assets/js/sweetalert2.all.min.js"></script>
 
 <script src="<?php echo BASE_URL; ?>Assets/js/fullcalendar-es.js"></script>
-<script src="<?php echo BASE_URL; ?>Assets/js/app.js"></script>
+<script src="<?php echo BASE_URL; ?>Assets/js/agendaeventos/app.js"></script>
 <script src="<?php echo BASE_URL; ?>Assets/js/theme-chooser.js"></script>
 <script>
     const base_url = '<?php echo BASE_URL; ?>';
